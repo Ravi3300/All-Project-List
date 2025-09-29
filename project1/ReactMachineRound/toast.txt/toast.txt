@@ -1,0 +1,104 @@
+import { useState } from "react";
+import "./styles.css";
+const ToastContainer = ({ successMsg }) => {
+  console.log("Toast", successMsg);
+  const [isToast, setIsToast] = useState(false);
+  const [toastList, setToastList] = useState([]);
+
+  const handleAddToast = (message, type) => {
+    const id = new Date().getTime();
+    setToastList((prev) => [...prev, { id, message, type }]);
+    setTimeout(() => {
+      handleCloseButton(id);
+    }, 5000);
+  };
+
+  console.log(toastList);
+
+  const handleCloseButton = (id) => {
+    setIsToast(false);
+    setToastList((prev) => prev.filter((data) => data.id !== id));
+  };
+  return (
+    <div>
+      <div>
+        {toastList?.map((data, index) => (
+          <div className={`toast-conatiner ${data?.type}`} key={data?.id}>
+            <div>{data?.message} Toast</div>
+            <div
+              style={{ marginLeft: "12px", cursor: "pointer" }}
+              onClick={() => handleCloseButton(data?.id)}
+            >
+              ❌
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Btn Container */}
+      <div className="toast-container">
+        <div className="btn-container">
+          <button onClick={() => handleAddToast("Success", "success")}>
+            Success Toast
+          </button>
+          <button onClick={() => handleAddToast("Info", "info")}>
+            Info Toast
+          </button>
+          <button onClick={() => handleAddToast("Warning", "warning")}>
+            Warning Toast
+          </button>
+          <button onClick={() => handleAddToast("Error", "error")}>
+            {" "}
+            Error Toast
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ToastContainer;
+
+
+//css
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.toast-conatiner {
+  display: flex;
+  justify-content: end;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  width: 220px;
+  animation: slide 1sec 1;
+  color: white;
+}
+
+.success {
+  background-color: green;
+}
+
+.warning {
+  background-color: yellow;
+}
+
+.info {
+  background-color: blue;
+}
+
+.error {
+  background-color: red;
+}
+
+@keyframes slide {
+  0% {
+    transform,: translateX(100%);
+  }
+  ,
+  100% {
+    transform,: translateX(0%);
+  }
+}

@@ -1,0 +1,12 @@
+
+<div class="chip-container">
+    <div class="parent-container">
+        <input type="text" placeholder="Enter Chip Name" class="input-box"   [(ngModel)]="chipInput"
+        name="chipInput" (keyDown.enter)="getChipData()"/>
+    </div>
+     <div class="list-table">
+          <h1>Chip List</h1>
+         <app-chip-input-list [allChipData]="allChipData"></app-chip-input-list>
+     </div>
+</div>
+  

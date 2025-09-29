@@ -1,0 +1,23 @@
+*{
+    background-color: rgb(12, 14, 14);
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10x;
+}
+
+.pagination a{
+    color: red;
+    border:1px solid ;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.pagination a:hover{
+    background-color: aqua;
+    color: black;
+}
+

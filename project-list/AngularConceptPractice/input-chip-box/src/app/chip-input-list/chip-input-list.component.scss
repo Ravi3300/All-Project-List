@@ -1,0 +1,13 @@
+.chip-list {
+  width: 100%;
+ 
+  border: 1px solid white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 8px;
+}
+
+.chip-list-parent{
+    margin-top: 12px;
+}

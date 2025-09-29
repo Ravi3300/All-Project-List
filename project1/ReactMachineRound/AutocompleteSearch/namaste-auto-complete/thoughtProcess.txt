@@ -1,0 +1,6 @@
+1.Create Input Box
+2.Fetch Data from Api
+3.Send Data on suggestion comp.and then show Data
+4.Pass params in api so that search Autosuggestion work
+5.Handle Show Hide on onBlur and onFocus
+

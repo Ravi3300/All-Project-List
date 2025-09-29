@@ -1,0 +1,32 @@
+function longestSubArrayofk(arr,k){
+    let ws = 0;
+    let we = 0;
+    let sum = 0;
+    let maxSum = -Infinity;
+    while(we <= arr.length-1){
+        sum += arr[we];
+        if(sum < k){
+            we++;
+        }else if(sum == k){
+            maxSum = Math.max(maxSum,we-ws+1);
+            we++;
+        }else{
+            while(sum > k){
+            sum -= arr[ws];
+              ws++;
+             if(sum == k){
+                 maxSum = Math.max(maxSum,we-ws+1); 
+             }
+          
+            }
+            we++
+        }
+    }
+    return maxSum;
+}
+
+let arr = [4,1,1,1,2,3,5];
+let k = 5;
+
+let ans = longestSubArrayofk(arr,k);
+console.log(ans);

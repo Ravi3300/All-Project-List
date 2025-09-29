@@ -1,0 +1,11 @@
+<div *ngFor="let chip of allChipData" class="chip-list-parent">
+    <div class="chip-list">
+       <div>
+           {{ chip?.name }}
+       </div>
+       <div style="cursor: pointer;" (click)="deleteChip(chip?.id)">
+        X
+       </div>
+    </div>
+  </div>
+  

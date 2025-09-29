@@ -1,0 +1,39 @@
+
+.heading-container{
+    display: flex;
+}
+
+.parent-class{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+.heading{
+    padding: 10px;
+    cursor: pointer;
+    border:1px solid;
+    /* margin-left: 10px;
+    border-radius: 12px; */
+
+}
+
+.compnent-container{
+    margin-top: 12px;
+    border:1px solid;
+    /* display: flex;
+    justify-content: center; */
+    width: 50%;
+    height: 300px;
+    
+}
+
+.inner-form{
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
+.form-label{
+    margin-top: 12px;
+}
+

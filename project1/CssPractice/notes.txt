@@ -1,0 +1,20 @@
+🟨 1. width
+
+    🔹 width sets the exact width of an element — no matter how big or small the screen or container is.
+    ✅ Always exactly 300px wide, even if the screen is smaller.
+
+    🟩 2. max-width
+
+    🔹 max-width sets the maximum width an element can grow to, but allows it to shrink if needed.
+    ✅ The box:
+
+    Will be 100% of its parent container, but not more than 300px
+
+    Will shrink on smaller screens
+
+🎯 When to Use What?
+Goal	                                        Use
+Fixed size element      	                    width
+Responsive container (e.g. cards, images)	    max-width + width: 100%
+Prevent overflow on small screens	            max-width
+

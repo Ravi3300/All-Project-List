@@ -1,0 +1,119 @@
+const threeWayPartition = (arr, lowVal, highVal) => {
+    let start = 0;
+    let end = arr.length - 1;
+    
+    let i = 0;  // Start i at 0
+    while (i <= end) {  // We need to iterate through until i crosses 'end'
+        if (arr[i] < lowVal) {
+            // Swap arr[start] and arr[i] if arr[i] is less than lowVal
+            let temp = arr[start];
+            arr[start] = arr[i];
+            arr[i] = temp;
+            start++;
+            i++;  // Increment i after swap to continue checking next elements
+        } else if (arr[i] > highVal) {
+            // Swap arr[end] and arr[i] if arr[i] is greater than highVal
+            let temp = arr[end];
+            arr[end] = arr[i];
+            arr[i] = temp;
+            end--;  // Decrement end because we're done with that element
+        } else {
+            // If arr[i] is between lowVal and highVal, just move on to next element
+            i++;
+        }
+    }
+
+    console.log(arr, "Ans");
+};
+
+let arr = [1, 14, 5, 20, 4, 2, 54, 20, 87, 98, 3, 1, 32];
+let lowVal = 14;
+let highVal = 20;
+
+threeWayPartition(arr, lowVal, highVal);
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function minimumMergeOPerationRequiredToMakePalindrone(arr){
+    let low = 0;
+    let high = arr.length-1;
+    let count = 0;
+    let sum = 0;
+    while(low <= high){
+        if(arr[low] == arr[high]){
+            low++;
+            high--;
+        }else if(arr[low] < arr[high]){
+            arr[low+1]+=arr[low];
+            low++;
+            count++;
+           
+        }else{
+            arr[high-1]+=arr[high];
+            high--;
+            count++;
+        }
+    }
+    return count;
+}
+
+let arr = [1,4,5,1]; // 1
+let arr1 = [15,4,15]; // 0;
+let arr2 = [11,14,15,99] // 3
+console.log(minimumMergeOPerationRequiredToMakePalindrone(arr))
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/**
+ * @param {number} c
+ * @return {boolean}
+ */
+var judgeSquareSum = function(c) {
+    let a = 0;
+    let b = Math.ceil(Math.sqrt(c));
+    while(a <= b){
+        let aSq = a*a;
+        let bsq = b*b;
+        let sum = aSq + bsq;
+        console.log(sum)
+        if(sum  > c){
+            b--;
+        }else if( sum < c){
+            a++;
+        }else{
+            return true;
+        }
+    }
+    // for(let i = 1; i <= c-1; i++){
+    //     for(let j = i+1; j <= c-1; j++){
+    //         let squareSum = i*i + j*j;
+    //         console.log(squareSum);
+    //         if(squareSum == c){
+    //             return true;
+    //         }
+    //     }
+    // }
+    return false;
+};
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+var twoSum = function(numbers, target) {
+     let left = 0;
+     let right = numbers.length-1;
+     while(left <= right){
+        let sum = numbers[left] + numbers[right];
+        if(sum > target){
+            right--;
+        }else if(sum < target){
+            left++;
+        }else{
+          //  console.log(sum);
+            return [left+1,right+1];
+        }
+        // console.log(left+1,right+1);
+     }
+};

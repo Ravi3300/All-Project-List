@@ -1,0 +1,18 @@
+How to get ASIIC Value of any string
+case1:- if there is multiple character
+function getAsiicValue(){
+    let str = "Hello";
+    for(let i = 0; i<=str.length-1; i++){
+        console.log(str.charCodeAt(i));
+    }
+}
+getAsiicValue();
+
+case2: if there is single character
+console.log('A'.charCodeAt(0));
+
+
+*** Remember this point bcz it use to solve many string problem
+ASCII 65 to 90 = A to Z
+ASCII 97 to 122 = a to z
+ASCII 48 to 57 = 0 to 9

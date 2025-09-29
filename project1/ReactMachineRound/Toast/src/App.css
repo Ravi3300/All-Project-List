@@ -1,0 +1,50 @@
+.toast{
+  text-align: center;
+    border: 1px solid;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background: green;
+    margin-top: 12px;
+    color: white;
+    animation: slide 1sec 1;
+
+}
+
+.toastParent{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.deleteBtn{
+   color: red;
+   width: 200px;
+   margin-left: 12px;
+   cursor: pointer;
+}
+
+.success {
+  background-color: green;
+}
+
+.warning {
+  background-color: yellow;
+}
+
+.info {
+  background-color: blue;
+}
+
+.error {
+  background-color: red;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

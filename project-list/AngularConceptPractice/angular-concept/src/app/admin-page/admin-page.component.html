@@ -1,0 +1,44 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div>
+      <app-input-filed 
+        label="First Name" 
+        placeholder="Enter First Name" 
+        [control]="fName">
+      </app-input-filed>
+    </div>
+
+    <div>
+      <app-input-filed 
+        label="Last Name" 
+        placeholder="Enter Last Name" 
+        [control]="lName">
+      </app-input-filed>
+    </div>
+
+    <div>
+      <app-input-filed 
+        label="Email" 
+        placeholder="Enter Email" 
+        [control]="email" 
+        type="email">
+      </app-input-filed>
+    </div>
+
+    <div>
+      <app-input-filed 
+        label="Phone" 
+        placeholder="Enter Phone Number" 
+        [control]="phone" 
+        type="tel">
+      </app-input-filed>
+    </div>
+
+    <div>
+      <app-button-component 
+        label="Submit" 
+        type="submit" (click)="submitFormData()">
+      </app-button-component>
+    </div>
+  </form>
+</div>

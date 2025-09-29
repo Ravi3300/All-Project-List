@@ -1,0 +1,12 @@
+<div>
+    <div>
+        <label>Parent:-</label>
+        <input type="text" [(ngModel)]="todoValue" placeholder="Enter Value"/>
+        <button type="button" (click)="sendData()">Submit</button>
+    </div>
+    <app-todo-list-child [todo]="todoValue" (getChildData)="getChildData($event)"></app-todo-list-child>
+
+    <h1>{{childData}}</h1>
+
+    <h3>{{name | textConverter:4}}</h3>
+</div>

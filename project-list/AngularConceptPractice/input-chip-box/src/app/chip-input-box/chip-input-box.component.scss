@@ -1,0 +1,22 @@
+.input-box{
+    width: 100%;
+    height: 45px;
+    border-radius: 12px;
+}
+
+.chip-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parent-container{
+    width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+.list-table{
+    margin-top: 12px;
+}
